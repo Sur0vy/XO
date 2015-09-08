@@ -1,6 +1,6 @@
 package com.Sur0vy.controller;
 
-import com.Sur0vy.felpers.CoordinateChecker;
+import com.Sur0vy.helpers.CoordinateChecker;
 import com.Sur0vy.model.Board;
 import com.Sur0vy.model.Player;
 

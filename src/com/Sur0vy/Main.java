@@ -18,11 +18,11 @@ public class Main {
         final Board board = new Board();
         final Player[] players = new Player[2];
 
-        players[0] = new Player("Sur0vy", new Figure("X"));
-        players[1] = new Player("Guest", new Figure("O"));
+        players[0] = new Player("Sur0vy", Figure.X);
+        players[1] = new Player("Guest", Figure.O);
 
-        final Figure figureX = new Figure("X");
-        final Figure figureO = new Figure("O");
+        final Figure figureX = Figure.X;
+        final Figure figureO = Figure.O;
 
         final GameController game = new GameController("XO", players, board);
         final AdvConsoleView advConsoleView = new AdvConsoleView(game);
@@ -44,7 +44,6 @@ public class Main {
         consoleView.showBoard();
         consoleView.start();
         //consoleView.showPlayers();
-
 
     }
 

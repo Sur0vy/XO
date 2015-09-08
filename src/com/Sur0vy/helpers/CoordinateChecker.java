@@ -1,4 +1,4 @@
-package com.Sur0vy.felpers;
+package com.Sur0vy.helpers;
 
 /**
  * Created by Suvorov on 26.08.2015.

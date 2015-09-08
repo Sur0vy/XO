@@ -1,6 +1,6 @@
 package com.Sur0vy.model;
 
-import com.Sur0vy.felpers.CoordinateChecker;
+import com.Sur0vy.helpers.CoordinateChecker;
 
 public class Board {
 
@@ -22,8 +22,10 @@ public class Board {
 
     public boolean setFigure(int x, int y, Figure figure){
         if (CoordinateChecker.checkCoordinate(x) && CoordinateChecker.checkCoordinate(y)) {
-            this.figures[x][y] = figure;
-            return true;
+            if (figure != null) {
+                this.figures[x][y] = figure;
+                return true;
+            }
         }
         return false;
     }

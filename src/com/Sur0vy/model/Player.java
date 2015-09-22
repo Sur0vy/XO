@@ -9,19 +9,16 @@ public class Player {
     private final Figure figure;
 
     public Player(final String name, final Figure figure) {
-
-        assert name != null;
-        assert figure != null;
-
         this.name = name;
         this.figure = figure;
     }
 
-    public String getPlayerName() {
-        return this.name;
+    public String getName() {
+        return name;
     }
 
-    public Figure getPlayerFigure() {
-        return this.figure;
+    public Figure getFigure() {
+        return figure;
     }
+
 }

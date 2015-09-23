@@ -1,15 +1,18 @@
 package com.Sur0vy.helpers;
 
-/**
- * Created by Suvorov on 26.08.2015.
- */
+import java.awt.*;
+
 public class CoordinateChecker {
 
-    private static final int MIN_COORDINATE = 0;
-
-    private static final int MAX_COORDINATE = 2;
-
-    public static boolean checkCoordinate(final int coordinate) {
-        return(!(coordinate < MIN_COORDINATE || coordinate > MAX_COORDINATE));
+    public static boolean checkPoint (final Point point,
+                                      final int minCoordinate,
+                                      final int maxCoordinate) {
+        return checkCoordinate(point.x, minCoordinate, maxCoordinate) && checkCoordinate(point.y, minCoordinate, maxCoordinate);
+    }
+    
+    private static boolean checkCoordinate(final int coordinate,
+                                           final int minCoordinate,
+                                           final int maxCoordinate) {
+        return coordinate >= minCoordinate && coordinate < maxCoordinate;
     }
 }

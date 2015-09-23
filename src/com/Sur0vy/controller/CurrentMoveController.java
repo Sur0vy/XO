@@ -24,11 +24,11 @@ public class CurrentMoveController {
 
     private int countFiguresInTheRow(final Field field, final Integer row) {
         int countFigure = 0;
-        for (int x = 0; x < field.getSize(); x++) {
-            final Point p = new Point(x, row);
-            if (field.getFigure(p) != null)
-                countFigure++;
-        }
+//        for (int x = 0; x < field.getSize(); x++) {
+//            final Point p = new Point(x, row);
+//            if (field.getFigure(p) != null)
+//                countFigure++;
+//        }
         return countFigure;
     }
 

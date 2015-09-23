@@ -9,8 +9,8 @@ import java.awt.*;
 
 public class Main {
 
-    public static void main(String... args) throws Exception {
-        final Game g = new Game.Builder().player1(new Player("12", Figure.X)).
+    /*public static void main(String... args) throws Exception {
+        final Game g = new Game.Builder().players(new Player("12", Figure.X)).
                                         player2(new Player("12", Figure.O)).
                                         name("eregd").
                                         field(null).
@@ -44,7 +44,7 @@ public class Main {
             }
         }
         throw new RuntimeException("no one wins =(");
-    }
+    }*/
 
 }
 

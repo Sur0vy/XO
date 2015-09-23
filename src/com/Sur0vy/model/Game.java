@@ -4,27 +4,20 @@ public class Game {
 
     private static int w = 9;
 
-    private final Player player1;
-
-    private final Player player2;
+    private final Player[] players;
 
     private final Field field;
 
     private final String name;
 
     private Game(final Builder builder) {
-        this.player1 = builder.getPlayer1();
-        this.player2 = builder.getPlayer2();
+        this.players = builder.getPlayers();
         this.field = builder.getField();
         this.name = builder.getName();
     }
 
-    public Player getPlayer1() {
-        return this.player1;
-    }
-
-    public Player getPlayer2() {
-        return this.player2;
+    public Player[] getPlayers() {
+        return this.players;
     }
 
     public Field getField() {
@@ -37,21 +30,14 @@ public class Game {
 
     public static class Builder {
 
-        private  Player player1;
-
-        private  Player player2;
+        private  Player[] players;
 
         private  Field field;
 
         private  String name;
 
-        public Builder player1(final Player player1) {
-            this.player1 = player1;
-            return this;
-        }
-
-        public Builder player2(final Player player2) {
-            this.player2 = player2;
+        public Builder players(final Player[] players) {
+            this.players = players;
             return this;
         }
 
@@ -65,12 +51,8 @@ public class Game {
             return this;
         }
 
-        public Player getPlayer1() {
-            return this.player1;
-        }
-
-        public Player getPlayer2() {
-            return this.player2;
+        public Player[] getPlayers() {
+            return this.players;
         }
 
         public Field getField() {

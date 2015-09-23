@@ -2,26 +2,30 @@ package com.Sur0vy.controller;
 
 import com.Sur0vy.model.Field;
 import com.Sur0vy.model.Figure;
+import com.Sur0vy.model.exceptions.NoWinnerException;
 
 import java.awt.*;
 
 
 public class WinnerController {
 
-    public Figure getWinner(final Field field) {
+   /* public Figure getWinner(final Field field) throws NoWinnerException {
         Figure winner;
         for (int i = 0; i < field.getSize(); i++) {
             winner = checkRow(field, i);
-            if (winner != null) return winner;
+            if (winner != null)
+                return winner;
             winner = checkColumn(field, i);
-            if (winner != null) return winner;
+            if (winner != null)
+                return winner;
         }
         winner = checkDiag1(field);
-        if (winner != null) return winner;
+        if (winner != null)
+            return winner;
         winner = checkDiag2(field);
-        if (winner != null) return winner;
-
-        return null;
+        if (winner != null)
+            return winner;
+        throw new NoWinnerException();
     }
 
     private Figure checkDiag1(final Field field) {
@@ -79,6 +83,6 @@ public class WinnerController {
             return field.getFigure(p1);
         }
         return null;
-    }
+    }*/
 
 }

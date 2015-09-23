@@ -11,9 +11,11 @@ public class RandomCoordinateGetter implements ICoordinateGetter {
 
     public Point getMoveCoordinate(final Field field) {
         Point result = getRandomPoint();
-        while (field.getFigure(result) != null) {
-            result = getRandomPoint();
-        }
+//        while (field.getFigure(result) != null) {
+//            result = getRandomPoint();
+//        }
+        result = getRandomPoint();
+
         return result;
     }
 

@@ -25,22 +25,16 @@ public class FieldTest {
         final Field field = new Field();
         final Point  inputPoint = new Point(0, 0);
         final Figure inputFigure = Figure.O;
-
         field.setFigure(inputPoint, inputFigure);
-
         final Figure actualFigure = field.getFigure(inputPoint);
-
         assertEquals(inputFigure, actualFigure);
-
     }
 
     @Test
-    public void testGetFigureWhenFigureIsNosSet() throws Exception {
+    public void testGetFigureWhenFigureIsNotSet() throws Exception {
         final Field field = new Field();
         final Point  inputPoint = new Point(0, 0);
-
         final Figure actualFigure = field.getFigure(inputPoint);
-
         assertNull(actualFigure);
     }
 
@@ -49,11 +43,10 @@ public class FieldTest {
     public void testGetFigureWhenXIsLessThenZero() throws Exception {
         final Field field = new Field();
         final Point  inputPoint = new Point(-1, 0);
-
         try {
             field.getFigure(inputPoint);
             fail();
-        } catch (final InvalidPointException e) {};
+        } catch (final InvalidPointException e) {}
     }
 
     @Test
@@ -64,7 +57,7 @@ public class FieldTest {
         try {
             field.getFigure(inputPoint);
             fail();
-        } catch (final InvalidPointException e) {};
+        } catch (final InvalidPointException e) {}
     }
 
     @Test
@@ -75,7 +68,7 @@ public class FieldTest {
         try {
             field.getFigure(inputPoint);
             fail();
-        } catch (final InvalidPointException e) {};
+        } catch (final InvalidPointException e) {}
     }
 
     @Test
@@ -86,7 +79,7 @@ public class FieldTest {
         try {
             field.getFigure(inputPoint);
             fail();
-        } catch (final InvalidPointException e) {};
+        } catch (final InvalidPointException e) {}
     }
 
     @Test
@@ -97,7 +90,7 @@ public class FieldTest {
         try {
             field.getFigure(inputPoint);
             fail();
-        } catch (final InvalidPointException e) {};
+        } catch (final InvalidPointException e) {}
     }
 
     @Test
@@ -108,7 +101,7 @@ public class FieldTest {
         try {
             field.getFigure(inputPoint);
             fail();
-        } catch (final InvalidPointException e) {};
+        } catch (final InvalidPointException e) {}
     }
 
     @Test
@@ -117,10 +110,10 @@ public class FieldTest {
         final Point  inputPoint = new Point(0, 0);
         final Figure inputFigure = Figure.O;
 
-        field.setFigure(inputPoint,inputFigure);
+        field.setFigure(inputPoint, inputFigure);
         try {
             field.setFigure(inputPoint, inputFigure);
             fail();
-        } catch (final AlreadyOccupaiedException e) {};
+        } catch (final AlreadyOccupaiedException e) {}
     }
 }

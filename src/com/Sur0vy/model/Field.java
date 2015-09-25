@@ -1,9 +1,7 @@
 package com.Sur0vy.model;
 
 import com.Sur0vy.helpers.CoordinateChecker;
-import com.Sur0vy.model.exceptions.AlreadyOccupaiedException;
 import com.Sur0vy.model.exceptions.InvalidPointException;
-import com.sun.corba.se.impl.oa.poa.AOMEntry;
 
 import java.awt.Point;
 
@@ -28,12 +26,9 @@ public class Field {
         return figures[point.x][point.y];
     }
 
-    public void setFigure(final Point point, final Figure figure) throws InvalidPointException, AlreadyOccupaiedException {
+    public void setFigure(final Point point, final Figure figure) throws InvalidPointException {
         if (!CoordinateChecker.checkPoint(point, MIN_COORDINATE, MAX_COORDINATE)) {
             throw new InvalidPointException();
-        }
-        if (figures[point.x][point.y] != null) {
-            throw new AlreadyOccupaiedException();
         }
         figures[point.x][point.y] = figure;
     }

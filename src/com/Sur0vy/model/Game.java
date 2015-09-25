@@ -2,8 +2,6 @@ package com.Sur0vy.model;
 
 public class Game {
 
-    private static int w = 9;
-
     private final Player[] players;
 
     private final Field field;

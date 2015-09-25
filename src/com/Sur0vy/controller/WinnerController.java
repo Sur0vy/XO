@@ -14,19 +14,19 @@ public class WinnerController {
         Figure winner;
         try {
             winner = checkRows(field);
-            if (null == winner) {
+            if (null != winner) {
                 return winner;
             }
             winner = checkCols(field);
-            if (null == winner) {
+            if (null != winner) {
                 return winner;
             }
             winner = checkMainDiagonal(field);
-            if (null == winner) {
+            if (null != winner) {
                 return winner;
             }
             winner = checkAdvDiagonal(field);
-            if (null == winner) {
+            if (null != winner) {
                 return winner;
             }
         } catch (InvalidPointException e) {
@@ -64,8 +64,8 @@ public class WinnerController {
 
     private Figure checkAdvDiagonal(final Field field) throws InvalidPointException{
         for (int i = 0; i < field.getSize(); i++) {
-            if (check(field, new Point(0, field.getSize()), p -> new Point(p.x + 1, p.y - 1))) {
-                return field.getFigure(new Point(0, field.getSize()));
+            if (check(field, new Point(0, field.getSize() - 1), p -> new Point(p.x + 1, p.y - 1))) {
+                return field.getFigure(new Point(0, field.getSize() - 1));
             }
         }
         return null;

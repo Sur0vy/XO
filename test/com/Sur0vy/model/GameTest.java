@@ -21,7 +21,7 @@ public class GameTest {
 
     @Test
     public void testGetField() throws Exception {
-        final Field inputValue = new Field();
+        final Field inputValue = new Field(3);
         final Field expectedValue = inputValue;
         final Player[] players = {new Player(null, null), new Player(null, null)};
         final Game game = new Game.Builder().players(players).

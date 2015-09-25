@@ -7,27 +7,30 @@ import java.awt.Point;
 
 public class Field {
 
-    public static final int FIELD_SIZE = 3;
-
     private static final int MIN_COORDINATE = 0;
 
-    private static final int MAX_COORDINATE = FIELD_SIZE;
+    private final Figure[][] figures;
 
-    private final Figure[][] figures = new Figure[FIELD_SIZE][FIELD_SIZE];
+    private final int fieldSise;
+
+    public Field(int fieldSise) {
+        this.fieldSise = fieldSise;
+        figures = new Figure[fieldSise][fieldSise];
+    }
 
     public int getSize() {
-        return FIELD_SIZE;
+        return fieldSise;
     }
 
     public Figure getFigure(final Point point) throws InvalidPointException {
-        if (!CoordinateChecker.checkPoint(point, MIN_COORDINATE, MAX_COORDINATE)) {
+        if (!CoordinateChecker.checkPoint(point, MIN_COORDINATE, fieldSise)) {
             throw new InvalidPointException();
         }
         return figures[point.x][point.y];
     }
 
     public void setFigure(final Point point, final Figure figure) throws InvalidPointException {
-        if (!CoordinateChecker.checkPoint(point, MIN_COORDINATE, MAX_COORDINATE)) {
+        if (!CoordinateChecker.checkPoint(point, MIN_COORDINATE, fieldSise)) {
             throw new InvalidPointException();
         }
         figures[point.x][point.y] = figure;

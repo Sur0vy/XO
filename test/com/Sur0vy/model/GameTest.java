@@ -2,8 +2,6 @@ package com.Sur0vy.model;
 
 import org.junit.Test;
 
-import java.awt.*;
-
 import static org.junit.Assert.*;
 
 public class GameTest {
@@ -14,9 +12,9 @@ public class GameTest {
         final Player[] expectedValue = inputValue;
 
         final Game game = new Game.Builder().players(inputValue).
-                name(null).
-                field(null).
-                build();
+                                            name(null).
+                                            field(null).
+                                            build();
         final Player[] actualValue = game.getPlayers();
         assertEquals(expectedValue, actualValue);
     }
@@ -27,9 +25,9 @@ public class GameTest {
         final Field expectedValue = inputValue;
         final Player[] players = {new Player(null, null), new Player(null, null)};
         final Game game = new Game.Builder().players(players).
-                name(null).
-                field(inputValue).
-                build();
+                                            name(null).
+                                            field(inputValue).
+                                            build();
         final Field actualValue = game.getField();
         assertEquals(expectedValue, actualValue);
     }

@@ -9,9 +9,6 @@ import java.awt.*;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Suvorov on 25.09.2015.
- */
 public class WinnerControllerTest {
 
     @Test

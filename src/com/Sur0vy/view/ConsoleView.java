@@ -20,9 +20,17 @@ public class ConsoleView /*implements ICoordinateGetter*/ {
 
     private  final MoveController moveController = new MoveController();
 
+    private void showPlayers(final Game game) {
+        System.out.println("XO players:");
+        for (Player player: game) {
+            System.out.format("Player %s play figure %s \n", player.getName(), player.getFigure());
+        }
+    }
+
     public void show(final Game game) {
         System.out.format("Game name: %s\n", game.getName());
         final Field field = game.getField();
+        showPlayers(game);
         for (int y = 0; y < field.getSize(); y++) {
             if (y != 0) {
                 printHorisontalSeparator();
@@ -67,7 +75,6 @@ public class ConsoleView /*implements ICoordinateGetter*/ {
             System.out.println("Point is invalid!");
             return askCoordinate(coordinateName);
         }
-
     }
 
     private void printLine(final Field field,

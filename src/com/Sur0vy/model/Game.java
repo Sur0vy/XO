@@ -1,6 +1,10 @@
 package com.Sur0vy.model;
 
-public class Game {
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+public class Game implements Iterable<Player> {
 
     private final Player[] players;
 
@@ -24,6 +28,12 @@ public class Game {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public Iterator<Player> iterator() {
+        final List<Player> playersList = Arrays.asList(players);
+        return playersList.iterator();
     }
 
     public static class Builder {
